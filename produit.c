@@ -26,7 +26,7 @@ int main()
     for(i=100; i>=0; i--){
       choixM = rand_a_b(1, 4);
         if ( ptdevieJ <= 0){
-            printf("TES MORT FDP");
+            printf("TES MORT");
             break;
         }
         if ( ptdevieM <= 0){
