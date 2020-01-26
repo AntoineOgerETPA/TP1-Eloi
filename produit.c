@@ -21,6 +21,7 @@ int main()
     int a = 1;
     int b = 3;
     int choixM;
+		int Poison = 0;
     srand(time(NULL));
 
     for(i=100; i>=0; i--){
@@ -38,6 +39,9 @@ int main()
             printf("1 = Attaque ; 2 = Défence \n");
             scanf("%d", &choixj);
         }
+				if (poison == 1) {
+      ptdevieM - = 1;
+				}
         printf("1 = Attaque ; 2 = Défence ; 3 = Sort \n");
         scanf("%d", &choixj);
 
@@ -71,6 +75,7 @@ int main()
               printf("Vie du Joueur = %d \n", ptdevieJ);
           //Le Monstre lance un sort :
               printf("Monstre lance un sort ! %d DMG\n",degatsMana -= attaqueM);
+							Poison = 1;
               printf("Mana utiliser = 4 PM \n");
               printf("Le Joueur a perdu %d PV \n", degatsMana -= degatsM);
               printf("Vie du Joueur %d PV\n", ptdevieJ -= degatsMana);
@@ -98,10 +103,12 @@ int main()
                 printf("Le joueur se protege \n");
             //Le Monstre lance un sort :
 	              printf("Monstre lance un sort ! %d DMG\n",degatsMana -= attaqueM);
+								Poison = 1;
 	              printf("Mana utiliser = 4 PM \n");
-	              printf("Le Joueur a perdu %d PV \n", degatsMana -= degatsM);
+	              printf("Le Joueur a perdu %d PV \n", degatsM -= degatsMana);
 	              printf("Vie du Joueur %d PV\n", ptdevieJ -= degatsMana);
 	              break;
+					}
         }
         if( choixj == 3){
             switch (choixM) {
@@ -111,6 +118,7 @@ int main()
             //Joueur lance un sort :
                 printf("Vie de Joueur = %d \n", ptdevieJ);
                 printf("Joueur lance un sort ! %d \n", attaqueJ -= degatsMana);
+								Poison = 1;
                 printf("Mana utiliser = -4 PM \n");
                 printf("Le Monstre a perdu %d PV \n", degatsJ -= degatsMana);
                 printf("Vie du Monstre %d \n", ptdevieM -= degatsJ -= degatsMana);
@@ -120,6 +128,7 @@ int main()
             //Joueur lance un sort :
                 printf("Vie de Joueur = %d \n", ptdevieJ);
                 printf("Joueur lance un sort ! %d \n", attaqueJ -= degatsMana);
+								Poison = 1;
                 printf("Mana utiliser = -4 PM \n");
                 printf("Le Monstre a perdu %d PV \n", degatsJ -= degatsMana);
                 printf("Vie du Monstre %d \n", ptdevieM -= degatsJ -= degatsMana);
@@ -133,17 +142,18 @@ int main()
 						//Joueur lance un sort :
 							printf("Vie de Joueur = %d \n", ptdevieJ);
 							printf("Joueur lance un sort ! %d \n", attaqueJ -= degatsMana);
+							Poison = 1;
 							printf("Mana utiliser = -4 PM \n");
 							printf("Le Monstre a perdu %d PV \n", degatsJ -= degatsMana);
 							printf("Vie du Monstre %d \n", ptdevieM -= degatsJ -= degatsMana);
 							printf("Mana du Joueur = %d \n", PM -= degatsMana);
 						//Le Monstre lance un sort :
 		          printf("Monstre lance un sort ! %d DMG\n",degatsMana -= attaqueM);
+							Poison = 1;
 		          printf("Mana utiliser = 4 PM \n");
 		          printf("Le Joueur a perdu %d PV \n", degatsMana -= degatsM);
 		          printf("Vie du Joueur %d PV\n", ptdevieJ -= degatsMana);
 		          break;
-
             }
         }
     }
