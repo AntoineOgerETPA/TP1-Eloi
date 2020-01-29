@@ -1,3 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int rand_a_b(int a, int b){
+			return rand()%(b-a) +a;
+}
+
+int main()
 {
     int attaqueM = 10;
     int ptdevieM = 100;
